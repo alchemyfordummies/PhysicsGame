@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Physics Game</string>
+    <string name="main_menu_play_game">Play</string>
 </resources>
