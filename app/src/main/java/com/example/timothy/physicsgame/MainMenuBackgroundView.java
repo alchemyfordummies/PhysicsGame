@@ -7,12 +7,18 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.timothy.physicsgame.CelestialObjects.Planet;
+import com.example.timothy.physicsgame.CelestialObjects.Sun;
+
 import java.util.Random;
 
 public class MainMenuBackgroundView extends View {
 
     private Paint _easel    = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Random _random  = new Random();
+
+    private Planet[] planets;
+    private Sun sun;
 
 
     public MainMenuBackgroundView(Context context) {
