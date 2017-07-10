@@ -7,8 +7,10 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.timothy.physicsgame.CelestialObjects.CelestialObjectEnum;
 import com.example.timothy.physicsgame.CelestialObjects.Planet;
 import com.example.timothy.physicsgame.CelestialObjects.Sun;
+import com.example.timothy.physicsgame.Helpers.SeedGenerator;
 
 import java.util.Random;
 
@@ -18,7 +20,11 @@ public class MainMenuBackgroundView extends View {
     private Random _random  = new Random();
 
     private Planet[] planets;
+    private Planet playerPlanet;
+
     private Sun sun;
+
+    private SeedGenerator seedGenerator;
 
 
     public MainMenuBackgroundView(Context context) {
@@ -38,6 +44,9 @@ public class MainMenuBackgroundView extends View {
 
     public void init(AttributeSet attrs, int defStyle) {
         _easel.setColor(Color.BLUE);
+
+        seedGenerator = new SeedGenerator(Globals.SUN);
+        sun = new Sun(SeedGenerator.generate());
     }
 
     public void onDraw(Canvas canvas) {
